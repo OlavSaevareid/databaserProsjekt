@@ -90,7 +90,8 @@ def usecase1():
     ('B2008', 'Stephen', 'Curry', 'chef@ntnu.no', '98901234'),
     ('B2009', 'Tim', 'Duncan', 'fundamental@ntnu.no', '90123456'),
     ('B2010', 'Kevin', 'Durant', 'KD7@ntnu.no', '91357924'),
-    ('B2011','Johnny', 'Bravo', 'WhoaMama@ntnu.no','91357926');
+    ('B2011','Johnny', 'Bravo', 'johnny@stud.ntnu.no','91357926')
+    ;
 
     INSERT INTO "Instruktor" (InstruktorID,Fornavn,Etternavn,Epost,Mobil) VALUES
     ('00007', 'Christiano', 'Ronaldo', 'RonaldoCR7@NTNU.no', '91234567'),
