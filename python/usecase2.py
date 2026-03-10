@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-def usecase2():
+def usecase2(epost, aktivitetstype, tispunkt):
     baseDir = os.path.dirname(__file__) #Current directory-->Python
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
     usecasePath = os.path.join(baseDir, "..", "sql", "usecase2.sql")
@@ -12,13 +12,7 @@ def usecase2():
     with open(usecasePath,"r", encoding="Utf-8") as queryRaw:
         query = queryRaw.read()
 
-    paramteres = {
-        "epost" : "johnny@stud.ntnu.no",
-        "aktivitetstype" : "Spinning60",
-        "tidspunkt" : ""
-    }
-
-    cursor.execute(query, paramteres)
+    cursor.execute(query, )
     connection.commit()
     print("query utført")
     connection.close()
