@@ -1,18 +1,24 @@
 import sqlite3
+import os
 
 def createDB():
-    connection = sqlite3.connect("treningDB.db")
+    baseDir = os.path.dirname(__file__) #Current directory-->Python
+    dbPath = os.path.join(baseDir, "..", "treningDB.db")
+    schemaPath = os.path.join(baseDir, "..", "sql", "schema.sql")
+    dataPath = os.path.join(baseDir, "..", "sql", "data.sql")
+
+    connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
 
     print("Kobler til/lager databasen")
 
-    with open("../sql/schema.sql", "r", encoding = "utf-8") as schemaRaw:
+    with open(schemaPath, "r", encoding = "utf-8") as schemaRaw:
         schema = schemaRaw.read()
         cursor.executescript(schema)
 
     print("Oppretter skjema")
 
-    with open("-./sql/data.sql", "r", encoding = "utf-8") as dataRaw:
+    with open(dataPath, "r", encoding = "utf-8") as dataRaw:
         data = dataRaw.read()
         cursor.executescript(data)
 
@@ -23,5 +29,5 @@ def createDB():
 
     print("Databasen er opprettet med skjema og data")
 
-    if __name__ == "__main__":
-        createDB()
+if __name__ == "__main__":
+    createDB()
