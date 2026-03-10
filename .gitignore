@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# SQLite
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
