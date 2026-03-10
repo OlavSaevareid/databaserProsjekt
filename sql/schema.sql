@@ -34,7 +34,9 @@ CREATE TABLE "Aapningstider" (
     Til TIME NOT NULL,
     SenterID char(5) NOT NULL,
     PRIMARY KEY (SenterID, Ukedag),
-    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID)
+    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID),
+    CHECK(Til > Fra)
+    CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );
 
 
@@ -86,18 +88,20 @@ CREATE TABLE "Instruktor"(
 CREATE TABLE "Sal" (
     SalID char(5) NOT NULL,
     Navn varchar(20) NOT NULL,
-    Plasser INT,
+    Plasser INT NOT NULL,
     SenterID char(5) NOT NULL,
     PRIMARY KEY (SalID),
-    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID)
+    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID),
+    CHECK(Plasser >=0)
 );
 
 CREATE TABLE "Sykkel" (
     SykkelNr char(5) NOT NULL,
-    HarBluetooth BOOLEAN,
+    HarBluetooth BOOLEAN NOT NULL,
     SalID char(5) NOT NULL,
     PRIMARY KEY(SykkelNr, SalID),
-    FOREIGN KEY (SalID) REFERENCES "Sal"(SalID)
+    FOREIGN KEY (SalID) REFERENCES "Sal"(SalID),
+    CHECK (HarBluetooth IN (0,1))
 );
 
 
@@ -108,7 +112,9 @@ CREATE TABLE "Tredemolle" (
     MaksHastighet INT NOT NULL,
     MaksStigning INT NOT NULL,
     PRIMARY KEY(TredemolleNr,SalID),
-    FOREIGN KEY (SalID) REFERENCES "Sal"(SalID)
+    FOREIGN KEY (SalID) REFERENCES "Sal"(SalID),
+    CHECK(MaksHastighet > 0),
+    CHECK(MaksStigning >= 0)
 );
 
 
@@ -127,7 +133,9 @@ CREATE TABLE "BemannetPeriode" (
     Til TIME NOT NULL,
     SenterID char(5) NOT NULL,
     PRIMARY KEY (SenterID, Ukedag, Fra),
-    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID)
+    FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID),
+    CHECK(Til > Fra)
+    CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );
 
 
@@ -211,4 +219,5 @@ CREATE TABLE "Reservasjon"(
     FOREIGN KEY(IdrettslagID) REFERENCES "Idrettslag"(IdrettslagID),
     FOREIGN KEY(SalID) REFERENCES "Sal"(SalID),
     CHECK (Til > Fra)
+    CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );
