@@ -1,4 +1,4 @@
-INSERT INTO Booking (BookingID, BrukerID, GruppetimeID, Status, OppmoteTid)
+INSERT INTO Booking (BookingID, BrukerID, GruppetimeID, Status, Oppmote)
 SELECT :bookingid, u.BrukerID, g.GruppetimeID, :status, NULL
 FROM Gruppetime AS g
 JOIN Aktivitetstype AS a 
@@ -11,4 +11,4 @@ JOIN Senter AS s
     ON s.SenterID = sal.SenterID
 WHERE a.Beskrivelse = :aktivitetstype 
     AND g.StartTid = :starttid
-    AND s.Navn IN ('Oya', 'DRAGVOLL');
+    AND s.Navn = 'Oya';
