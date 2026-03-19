@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="ProjectDB_DEL2_KORREKT.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure pragmas browser query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3520"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Instruktor" custom_title="0" dock_id="1" table="4,10:mainInstruktor"/><dock_state state="000000ff00000000fd00000001000000020000059700000381fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005970000011800ffffff000005970000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Aapningstider" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="50"/><column index="2" value="29"/><column index="3" value="29"/><column index="4" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Aktivitetstype" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="99"/><column index="2" value="37"/><column index="3" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Aktivitetstype2Sal" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="41"/><column index="2" value="102"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="BemannetPeriode" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="50"/><column index="2" value="29"/><column index="3" value="29"/><column index="4" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Booking" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="67"/><column index="2" value="62"/><column index="3" value="90"/><column index="4" value="44"/><column index="5" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Bruker" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="59"/><column index="2" value="53"/><column index="3" value="63"/><column index="4" value="39"/><column index="5" value="39"/><column index="6" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Fasilitet" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="66"/><column index="2" value="37"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Fasilitet2Senter" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="69"/><column index="2" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Gruppetime" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="87"/><column index="2" value="53"/><column index="3" value="52"/><column index="4" value="75"/><column index="5" value="82"/><column index="6" value="80"/><column index="7" value="102"/><column index="8" value="41"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Idrettslag" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="77"/><column index="2" value="37"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Idrettslag2Bruker" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="80"/><column index="2" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Instruktor" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="79"/><column index="2" value="53"/><column index="3" value="63"/><column index="4" value="39"/><column index="5" value="39"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Portscan" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="71"/><column index="2" value="29"/><column index="3" value="62"/><column index="4" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Prikk" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="51"/><column index="2" value="29"/><column index="3" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Reservasjon" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="96"/><column index="2" value="80"/><column index="3" value="41"/><column index="4" value="50"/><column index="5" value="29"/><column index="6" value="29"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Sal" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="39"/><column index="2" value="37"/><column index="3" value="48"/><column index="4" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Senter" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="59"/><column index="2" value="37"/><column index="3" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Sykkel" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="58"/><column index="2" value="82"/><column index="3" value="41"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Tredemolle" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="84"/><column index="2" value="41"/><column index="3" value="65"/><column index="4" value="91"/><column index="5" value="83"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">DROP TABLE IF EXISTS &quot;Booking&quot;;
+DROP TABLE IF EXISTS &quot;Gruppetime&quot;;
+DROP TABLE IF EXISTS &quot;Fasilitet2Senter&quot;;
+DROP TABLE IF EXISTS &quot;Aktivitetstype2Sal&quot;;
+DROP TABLE IF EXISTS &quot;Idrettslag2Bruker&quot;;
+DROP TABLE IF EXISTS &quot;Prikk&quot;;
+DROP TABLE IF EXISTS &quot;Reservasjon&quot;;
+DROP TABLE IF EXISTS &quot;Sykkel&quot;;
+DROP TABLE IF EXISTS &quot;Tredemolle&quot;;
+DROP TABLE IF EXISTS &quot;Sal&quot;;
+DROP TABLE IF EXISTS &quot;Aapningstider&quot;;
+DROP TABLE IF EXISTS &quot;BemannetPeriode&quot;;
+DROP TABLE IF EXISTS &quot;Portscan&quot;;
+DROP TABLE IF EXISTS &quot;Instruktor&quot;;
+DROP TABLE IF EXISTS &quot;Aktivitetstype&quot;;
+DROP TABLE IF EXISTS &quot;Fasilitet&quot;;
+DROP TABLE IF EXISTS &quot;Idrettslag&quot;;
+DROP TABLE IF EXISTS &quot;Bruker&quot;;
+DROP TABLE IF EXISTS &quot;Senter&quot;;
+
+
+CREATE TABLE &quot;Senter&quot; (
+    SenterID char(5) NOT NULL,
+    Navn varchar(20) NOT NULL,
+    Adresse varchar(50) NOT NULL,
+    PRIMARY KEY (SenterID)
+);
+
+CREATE TABLE &quot;Aapningstider&quot; (
+    Ukedag varchar(20) NOT NULL,
+    Fra TIME NOT NULL,
+    Til TIME NOT NULL,
+    SenterID char(5) NOT NULL,
+    PRIMARY KEY (SenterID, Ukedag),
+    FOREIGN KEY (SenterID) REFERENCES &quot;Senter&quot;(SenterID)
+);
+
+
+CREATE TABLE &quot;Aktivitetstype&quot; (
+    AktivitetstypeID char(5) NOT NULL,
+    Navn varchar(50) NOT NULL,
+    Beskrivelse varchar(300) NOT NULL,
+    PRIMARY KEY (AktivitetstypeID)
+);
+
+
+CREATE TABLE &quot;Bruker&quot; (
+    BrukerID char(5) NOT NULL,
+    Fornavn varchar(20) NOT NULL,
+    Etternavn varchar(20) NOT NULL,
+    Epost varchar(50) NOT NULL,
+    Mobil varchar(8) NOT NULL,
+    UtestengtTil DATETIME,
+    PRIMARY KEY(BrukerID),
+    UNIQUE (Epost),
+    UNIQUE (Mobil),
+    CHECK (length(Mobil) = 8)
+);
+
+CREATE TABLE &quot;Fasilitet&quot; (
+    FasilitetID char(5) NOT NULL,
+    Navn varchar(50) NOT NULL,
+    PRIMARY KEY (FasilitetID)
+);
+
+CREATE TABLE &quot;Idrettslag&quot; (
+    IdrettslagID char(5) NOT NULL,
+    Navn varchar(20) NOT NULL,
+    PRIMARY KEY(IdrettslagID) );
+
+CREATE TABLE &quot;Instruktor&quot;(
+    InstruktorID char(5) NOT NULL,
+    Fornavn varchar(20) NOT NULL,
+    Etternavn varchar(20) NOT NULL,
+    Epost varchar(50) NOT NULL,
+    Mobil varchar(8) NOT NULL,
+    PRIMARY KEY(InstruktorID),
+    UNIQUE (Epost),
+    UNIQUE (Mobil),
+    CHECK (length(Mobil) = 8)
+);
+
+
+CREATE TABLE &quot;Sal&quot; (
+    SalID char(5) NOT NULL,
+    Navn varchar(20) NOT NULL,
+    Plasser INT,
+    SenterID char(5) NOT NULL,
+    PRIMARY KEY (SalID),
+    FOREIGN KEY (SenterID) REFERENCES &quot;Senter&quot;(SenterID)
+);
+
+CREATE TABLE &quot;Sykkel&quot; (
+    SykkelNr char(5) NOT NULL,
+    HarBluetooth BOOLEAN,
+    SalID char(5) NOT NULL,
+    PRIMARY KEY(SykkelNr, SalID),
+    FOREIGN KEY (SalID) REFERENCES &quot;Sal&quot;(SalID)
+);
+
+
+CREATE TABLE &quot;Tredemolle&quot; (
+    TredemolleNr char(5) NOT NULL,
+    SalID char(5) NOT NULL,
+    Produsent varchar(50) NOT NULL,
+    MaksHastighet INT NOT NULL,
+    MaksStigning INT NOT NULL,
+    PRIMARY KEY(TredemolleNr,SalID),
+    FOREIGN KEY (SalID) REFERENCES &quot;Sal&quot;(SalID)
+);
+
+
+CREATE TABLE &quot;Aktivitetstype2Sal&quot; (
+    SalID char(5) NOT NULL,
+    AktivitetstypeID char(5) NOT NULL,
+    PRIMARY KEY(SalID, AktivitetstypeID),
+    FOREIGN KEY(AktivitetstypeID) REFERENCES &quot;Aktivitetstype&quot;(AktivitetstypeID),
+    FOREIGN KEY(SalID) REFERENCES &quot;Sal&quot;(SalID)
+);
+
+
+CREATE TABLE &quot;BemannetPeriode&quot; (
+    Ukedag varchar(20) NOT NULL,
+    Fra TIME NOT NULL,
+    Til TIME NOT NULL,
+    SenterID char(5) NOT NULL,
+    PRIMARY KEY (SenterID, Ukedag, Fra),
+    FOREIGN KEY (SenterID) REFERENCES &quot;Senter&quot;(SenterID)
+);
+
+
+CREATE TABLE &quot;Fasilitet2Senter&quot; (
+    FasilitetID char(5) NOT NULL,
+    SenterID char(5) NOT NULL,
+    PRIMARY KEY(FasilitetID,SenterID),
+    FOREIGN KEY(FasilitetID) REFERENCES &quot;Fasilitet&quot;(FasilitetID),
+    FOREIGN KEY(SenterID) REFERENCES &quot;Senter&quot;(SenterID)
+);
+
+
+CREATE TABLE &quot;Gruppetime&quot; (
+    GruppetimeID char(5) NOT NULL,
+    StartTid DATETIME NOT NULL,
+    SluttTid DATETIME NOT NULL,
+    PublisertTid DATETIME NOT NULL,
+    InstruktorID char(5) NOT NULL,
+    IdrettslagID char(5),
+    AktivitetstypeID char(5) NOT NULL,
+    SalID char(5) NOT NULL,
+    PRIMARY KEY (GruppetimeID),
+    FOREIGN KEY (InstruktorID) REFERENCES &quot;Instruktor&quot;(InstruktorID),
+    FOREIGN KEY (IdrettslagID) REFERENCES &quot;Idrettslag&quot;(IdrettslagID),
+    FOREIGN KEY (AktivitetstypeID) REFERENCES &quot;Aktivitetstype&quot;(AktivitetstypeID),
+    FOREIGN KEY (SalID) REFERENCES &quot;Sal&quot;(SalID),
+    CHECK (SluttTid &gt; StartTid)
+);
+
+
+CREATE TABLE &quot;Idrettslag2Bruker&quot; (
+    IdrettslagID char(5) NOT NULL,
+    BrukerID char(5) NOT NULL,
+    PRIMARY KEY(IdrettslagID, BrukerID),
+    FOREIGN KEY(IdrettslagID) REFERENCES &quot;Idrettslag&quot;(IdrettslagID),
+    FOREIGN KEY(BrukerID) REFERENCES &quot;Bruker&quot;(BrukerID)
+);
+
+CREATE TABLE &quot;Portscan&quot;(
+    PortscanID char(5) NOT NULL,
+    Tid DATETIME NOT NULL,
+    BrukerID char(5) NOT NULL,
+    SenterID char(5) NOT NULL,
+    PRIMARY KEY(PortscanID),
+    FOREIGN KEY (BrukerID) REFERENCES &quot;Bruker&quot;(BrukerID),
+    FOREIGN KEY (SenterID) REFERENCES &quot;Senter&quot;(SenterID)
+);
+
+
+CREATE TABLE &quot;Prikk&quot; (
+    PrikkID char(5) NOT NULL,
+    Tid DATETIME NOT NULL,
+    BrukerID char(5) NOT NULL,
+    PRIMARY KEY(PrikkID),
+    FOREIGN KEY (BrukerID) REFERENCES &quot;Bruker&quot;(BrukerID)
+);
+
+
+CREATE TABLE &quot;Booking&quot; (
+    BookingID char(5) NOT NULL,
+    BrukerID char(5) NOT NULL,
+    GruppetimeID char(5) NOT NULL,
+    Status varchar(20) NOT NULL,
+    OppmoteTid DATETIME,
+    PRIMARY KEY (BookingID),
+    FOREIGN KEY (BrukerID)
+
+        REFERENCES &quot;Bruker&quot;(BrukerID),
+    FOREIGN KEY (GruppetimeID) 
+        REFERENCES &quot;Gruppetime&quot;(GruppetimeID),
+    UNIQUE(BrukerID, GruppetimeID),
+    CHECK (Status IN ('BOOKET', 'AVBESTILT', 'MOTTATT'))
+);
+
+
+CREATE TABLE &quot;Reservasjon&quot;(
+    ReservasjonsID char(5) NOT NULL,
+    IdrettslagID char(5) NOT NULL,
+    SalID char(5) NOT NULL,
+    Ukedag varchar(20) NOT NULL,
+    Fra DATETIME NOT NULL,
+    Til DATETIME NOT NULL,
+    PRIMARY KEY(ReservasjonsID),
+    FOREIGN KEY(IdrettslagID) REFERENCES &quot;Idrettslag&quot;(IdrettslagID),
+    FOREIGN KEY(SalID) REFERENCES &quot;Sal&quot;(SalID),
+    CHECK (Til &gt; Fra)
+);  </sql><current_tab id="0"/></tab_sql></sqlb_project>
