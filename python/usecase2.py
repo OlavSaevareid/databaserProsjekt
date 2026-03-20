@@ -27,7 +27,7 @@ def usecase2(epost, aktivitetstype, starttid):
         rad = cursor.fetchone()
 
         if not rad:
-            print("Gruppetimen eksisterer ikke")
+            print("Fant ikke gruppetime eller bruker")
             return
         
         bookingID = str(uuid.uuid4())[:5]
@@ -52,5 +52,5 @@ def usecase2(epost, aktivitetstype, starttid):
 
 if __name__ == "__main__":
     usecase2("johnny@stud.ntnu.no",
-        "Spinning60",
+        "Spin60",
         "2026-03-17 18:30:00")
