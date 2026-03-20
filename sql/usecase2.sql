@@ -1,5 +1,5 @@
-INSERT INTO Booking (BookingID, BrukerID, GruppetimeID, Status, Oppmote)
-SELECT :bookingid, u.BrukerID, g.GruppetimeID, 'BOOKET', NULL
+-- Sjekk at gruppetimen finnes
+SELECT g.GruppetimeID, u.BrukerID
 FROM Gruppetime AS g
 JOIN Aktivitetstype AS a 
     ON a.AktivitetstypeID = g.AktivitetstypeID
@@ -10,5 +10,11 @@ JOIN Sal AS sal
 JOIN Senter AS s 
     ON s.SenterID = sal.SenterID
 WHERE a.Beskrivelse = :aktivitetstype 
-    AND g.StartTid = :starttid
-    AND s.Navn = 'Oya';
+  AND g.StartTid = :starttid
+  AND s.Navn = 'Oya';
+
+-- Lag ny booking for brukeren
+INSERT INTO Booking
+(BookingID, BrukerID, GruppetimeID, Status, OppmoteTid)
+VALUES
+(:bookingid, :brukerid, :gruppetimeid, 'BOOKET', NULL);
