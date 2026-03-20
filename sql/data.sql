@@ -107,55 +107,13 @@ INSERT INTO "Sal" (SALID, navn, plasser, SenterID) VALUES
 
 INSERT INTO "Sykkel" (SykkelNr, HarBluetooth, SalID) VALUES --ikke lagt inn for øya
 --Sykler Dragvoll
-('SYK1','1','SAL1'),
-('SYK2','1','SAL1'),
-('SYK3','1','SAL1'),
-('SYK4','1','SAL1'),
-('SYK5','1','SAL1'),
-('SYK6','1','SAL1'),
-('SYK7','1','SAL1'),
-('SYK8','1','SAL1'),
-('SYK9','1','SAL1'),
-('SYK10','1','SAL1'),
-('SYK11','1','SAL1'),
+('SYK001','0','SAL1'),
+('SYK002','1','SAL1'),
+('SYK003','1','SAL1'),
+('SYK100','1','SAL10'),
 ('SYK101','1','SAL10'),
 ('SYK102','1','SAL10'),
-('SYK103','1','SAL10'),
-('SYK104','1','SAL10'),
-('SYK105','1','SAL10'),
-('SYK106','1','SAL10'),
-('SYK107','1','SAL10'),
-('SYK108','1','SAL10'),
-('SYK109','1','SAL10'),
-('SYK110','1','SAL10'),
-('SYK111','1','SAL10'),
-('SYK112','1','SAL10'),
-('SYK113','1','SAL10'),
-('SYK114','1','SAL10'),
-('SYK115','1','SAL10'),
-('SYK116','1','SAL10'),
-('SYK117','1','SAL10'),
-('SYK118','1','SAL10'),
-('SYK119','1','SAL10'),
-('SYK120','1','SAL10'),
-('SYK121','1','SAL10'),
-('SYK122','1','SAL10'),
-('SYK123','1','SAL10'),
-('SYK124','1','SAL10'),
-('SYK125','1','SAL10'),
-('SYK126','1','SAL10'),
-('SYK127','1','SAL10'),
-('SYK128','1','SAL10'),
-('SYK129','1','SAL10'),
-('SYK130','1','SAL10'),
-('SYK131','1','SAL10'),
-('SYK132','1','SAL10'),
-('SYK133','1','SAL10'),
-('SYK134','1','SAL10'),
-('SYK135','1','SAL10'),
-('SYK136','1','SAL10'),
-('SYK137','1','SAL10'),
-('SYK138','1','SAL10');
+
 
 
 INSERT INTO "Aktivitetstype2Sal" (SalID, AktivitetstypeID) VALUES
@@ -192,6 +150,7 @@ INSERT INTO "Gruppetime" (GruppetimeID, StartTid, SluttTid, PublisertTid, Instru
 ('G0010', '2026-03-16 17:30:00', '2026-03-16 18:15:00', '2026-03-14 17:30:00', '00089', 'L0012', 'A0001', 'SAL10'),
 ('G0011', '2026-03-16 18:30:00', '2026-03-16 19:15:00', '2026-03-14 18:30:00', '00088', 'L0012', 'A0003', 'SAL10'),
 ('G0012', '2026-03-17 18:30:00', '2026-03-17 19:30:00', '2026-03-14 19:30:00', '00087', 'L0012', 'A0004', 'SAL10');
+
 INSERT INTO "Booking" (BookingID, BrukerID, GruppetimeID, Status, OppmoteTid) VALUES
 ('BK001', 'B2001', 'G0001', 'MOTTATT', '2026-03-05 16:30:00'),
 ('BK002', 'B2002', 'G0001', 'MOTTATT', '2026-03-05 16:30:00');
@@ -203,4 +162,4 @@ INSERT INTO "Idrettslag2Bruker" (IdrettslagID, BrukerID) VALUES
 ('L0010', 'B2003');
 
 INSERT INTO "Reservasjon" (ReservasjonsID, IdrettslagID, SalID, Ukedag, Fra, Til) VALUES
-('R0001', 'L0014', 'SAL3', 'Mandag', '2026-03-02 18:00:00', '2026-03-02 20:00:00');
+('R0001', 'L0014', 'SAL3', 'Mandag', '18:00:00', '20:00:00');
