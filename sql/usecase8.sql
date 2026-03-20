@@ -1,3 +1,4 @@
+--studenter som trener sammen 
 SELECT u1.Epost, u2.Epost, COUNT(*) AS antallFelles
 FROM Booking AS b1
 JOIN Booking AS b2 

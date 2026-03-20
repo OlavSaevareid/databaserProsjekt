@@ -3,6 +3,7 @@ import os
 import uuid
 from sqlite3 import IntegrityError
 
+#booking av trening 
 def usecase2(epost, aktivitetstype, starttid):
     baseDir = os.path.dirname(__file__) #Current directory-->Python
     dbPath = os.path.join(baseDir, "..", "treningDB.db")

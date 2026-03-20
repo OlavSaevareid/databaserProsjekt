@@ -1,6 +1,7 @@
 import sqlite3
 from pathlib import Path
 
+#personlig besøkshistorie 
 def usecase5(aktivitetstype, senter, startdato, starttid)
     baseDir = Path(__file__).resolve().parent
     dbPath = baseDir.parent / "treningDB.db"

@@ -14,6 +14,8 @@ from python.usecase4 import usecase4
 #from python.usecase7 import usecase7
 #from python.usecase8 import usecase8
 
+#Ukeplan for treninger i uke 12 
+
 def main():
     while True:
         print("\n=== TreningDB ===")

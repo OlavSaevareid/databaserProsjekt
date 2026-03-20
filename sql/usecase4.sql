@@ -1,3 +1,4 @@
+--Ukeplan for treninger i uke 12
 SELECT DISTINCT g.StartTid, 
                 g.SluttTid,
                 s.Navn AS Senter,

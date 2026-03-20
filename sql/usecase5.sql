@@ -1,3 +1,4 @@
+--personlig besøkshistorie 
 SELECT DISTINCT a.Beskrivelse AS trening, s.Navn AS treningsenter, g.StartTid AS tidspunkt
 FROM Bruker AS u
 JOIN Booking AS b 

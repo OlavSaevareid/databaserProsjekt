@@ -1,3 +1,4 @@
+   --data for treningsentrene Øya og Dragvoll 
     INSERT INTO "Senter" (SenterID, Navn, Adresse) VALUES
     ('S0001', 'Oya', 'Vanglundsgate 2'),
     ('S0002', 'Dragvoll', 'Loholt alle 81');
@@ -17,8 +18,7 @@
     ('SAL15','Functional fitness',16,'S0002'),
     ('SAL16','PT-rom',5,'S0002');
 
-    INSERT INTO "Sykkel" (SykkelNr, HarBluetooth, SalID) VALUES --ikke lagt inn for øya
-    --Sykler Dragvoll
+    INSERT INTO "Sykkel" (SykkelNr, HarBluetooth, SalID) VALUES 
     ('SYK1','1','SAL1'),
     ('SYK2','1','SAL1'),
     ('SYK3','1','SAL1'),

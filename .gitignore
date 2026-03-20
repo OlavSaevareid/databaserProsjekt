@@ -12,3 +12,7 @@ Thumbs.db
 
 # VSCode
 .vscode/
+
+
+#DB browser /////
+.sqbpro

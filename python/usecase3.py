@@ -1,6 +1,6 @@
 import sqlite3
 import os
-
+#registrering av oppmøte 
 def usecase3(epost, aktivitetstype):
     baseDir = os.path.dirname(__file__) #Current directory-->Python
     dbPath = os.path.join(baseDir, "..", "treningDB.db")

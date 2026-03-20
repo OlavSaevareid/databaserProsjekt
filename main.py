@@ -22,7 +22,7 @@ def main():
         print("5 - Usecase 5")
         print("6 - Usecase 6")
         print("7 - Usecase 7")
-        print("8 - Usecase 8")
+        print("8 - Usecase 8") #potensielt legge til en 9 - reset
         print("0 - Avslutt")
         
         valg = input("Skriv inn valg: ").strip()

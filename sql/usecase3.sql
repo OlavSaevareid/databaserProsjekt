@@ -1,3 +1,4 @@
+--registrering av oppmøte 
 UPDATE Booking
 SET Oppmote = CURRENT_TIMESTAMP
 WHERE BrukerID = (

@@ -1,3 +1,4 @@
+--svartelisting
 WITH Prikkstatus AS (
     SELECT u.BrukerID, COUNT(*) AS AntallPrikker, MIN(p.Tid) AS ForstePrikk
     FROM Bruker AS u

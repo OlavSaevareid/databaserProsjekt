@@ -1,3 +1,4 @@
+--flest fellestreninger 
 SELECT b.BrukerID, u.Fornavn, u.Etternavn, COUNT(*) AS antall
 FROM Booking AS b
 JOIN Bruker AS u 
