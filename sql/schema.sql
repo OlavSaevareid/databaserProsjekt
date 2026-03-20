@@ -35,7 +35,7 @@ CREATE TABLE "Aapningstider" (
     SenterID char(5) NOT NULL,
     PRIMARY KEY (SenterID, Ukedag),
     FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID),
-    CHECK(Til > Fra)
+    CHECK(Til > Fra),
     CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE "Fasilitet" (
 CREATE TABLE "Idrettslag" (
     IdrettslagID char(5) NOT NULL,
     Navn varchar(20) NOT NULL,
-    PRIMARY KEY(IdrettslagID) );
+    PRIMARY KEY(IdrettslagID));
 
 CREATE TABLE "Instruktor"(
     InstruktorID char(5) NOT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE "BemannetPeriode" (
     SenterID char(5) NOT NULL,
     PRIMARY KEY (SenterID, Ukedag, Fra),
     FOREIGN KEY (SenterID) REFERENCES "Senter"(SenterID),
-    CHECK(Til > Fra)
+    CHECK(Til > Fra),
     CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );
 
@@ -163,7 +163,7 @@ CREATE TABLE "Gruppetime" (
     FOREIGN KEY (AktivitetstypeID) REFERENCES "Aktivitetstype"(AktivitetstypeID),
     FOREIGN KEY (SalID) REFERENCES "Sal"(SalID),
     FOREIGN KEY (SalID, AktivitetstypeID) REFERENCES "Aktivitetstype2Sal"(SalID, AktivitetstypeID),
-    CHECK (SluttTid > StartTid)
+    CHECK (SluttTid > StartTid),
     CHECK (PublisertTid < StartTid)
 );
 
@@ -223,6 +223,6 @@ CREATE TABLE "Reservasjon"(
     PRIMARY KEY(ReservasjonsID),
     FOREIGN KEY(IdrettslagID) REFERENCES "Idrettslag"(IdrettslagID),
     FOREIGN KEY(SalID) REFERENCES "Sal"(SalID),
-    CHECK (Til > Fra)
+    CHECK (Til > Fra),
     CHECK(Ukedag IN ("Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lordag", "Sondag"))
 );

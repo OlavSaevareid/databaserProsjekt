@@ -51,6 +51,8 @@ INSERT INTO "Fasilitet" (FasilitetID, navn) VALUES
 ('F0011', 'Dusj'),
 ('F0012', 'Bemannet resepsjon');
 
+INSERT INT
+
 
 INSERT INTO "Idrettslag"(IdrettslagID, Navn) VALUES
 ('L0004','NTNUI Fotball'),
