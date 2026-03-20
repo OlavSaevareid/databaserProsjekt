@@ -44,7 +44,7 @@ def usecase2(epost, aktivitetstype, starttid):
         print("Booking er registrert")
     
     except IntegrityError as e:
-        print(f"Brukeren har allerede booket timen{e}")
+        print(f"Brukeren har allerede booket timen: {e}")
 
     finally:
         connection.close()
