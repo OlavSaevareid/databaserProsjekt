@@ -5,7 +5,7 @@ def createDB():
     baseDir = os.path.dirname(__file__) #Current directory-->Python
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
     schemaPath = os.path.join(baseDir, "..", "sql", "schema.sql")
-    dataPath = os.path.join(baseDir, "..", "sql", "data.sql")
+    dataPath = os.path.join(baseDir, "..", "sql", "usecase1.sql")
 
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
