@@ -21,10 +21,10 @@ INSERT INTO "Aapningstider" (SenterID, Ukedag,Fra,Til) VALUES
 
 
 INSERT INTO "Aktivitetstype" (AktivitetstypeID, navn, Beskrivelse) VALUES 
-('A0001', 'Spinning', 'Spin4x4'),
-('A0002', 'Spinning', 'Spin8x3'),
-('A0003', 'Spinning', 'Spinning45'),
-('A0004', 'Spinning', 'Spinning60');
+('A0001', 'Spinning', 'Spin 4x4'),
+('A0002', 'Spinning', 'Spin 8x3'),
+('A0003', 'Spinning', 'Spin45'),
+('A0004', 'Spinning', 'Spin60');
 
 
 INSERT INTO "Bruker" (BrukerID, Fornavn, Etternavn, Epost, Mobil) VALUES
@@ -38,7 +38,7 @@ INSERT INTO "Bruker" (BrukerID, Fornavn, Etternavn, Epost, Mobil) VALUES
 ('B2008', 'Stephen', 'Curry', 'chef@ntnu.no', '98901234'),
 ('B2009', 'Tim', 'Duncan', 'fundamental@ntnu.no', '90123456'),
 ('B2010', 'Kevin', 'Durant', 'KD7@ntnu.no', '91357924'),
-('B2011','Johnny', 'Bravo', 'WhoaMama@ntnu.no','91357926');
+('B2011','Johnny', 'Bravo', 'johnny@stud.ntnu.no','91357926');
 
 INSERT INTO "Fasilitet" (FasilitetID, navn) VALUES
 ('F0001', 'Egentrening'),
