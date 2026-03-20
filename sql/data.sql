@@ -107,55 +107,13 @@ INSERT INTO "Sal" (SALID, navn, plasser, SenterID) VALUES
 
 INSERT INTO "Sykkel" (SykkelNr, HarBluetooth, SalID) VALUES --ikke lagt inn for øya
 --Sykler Dragvoll
-('SYK1','1','SAL1'),
-('SYK2','1','SAL1'),
-('SYK3','1','SAL1'),
-('SYK4','1','SAL1'),
-('SYK5','1','SAL1'),
-('SYK6','1','SAL1'),
-('SYK7','1','SAL1'),
-('SYK8','1','SAL1'),
-('SYK9','1','SAL1'),
-('SYK10','1','SAL1'),
-('SYK11','1','SAL1'),
+('SYK001','0','SAL1'),
+('SYK002','1','SAL1'),
+('SYK003','1','SAL1'),
+('SYK100','1','SAL10'),
 ('SYK101','1','SAL10'),
 ('SYK102','1','SAL10'),
-('SYK103','1','SAL10'),
-('SYK104','1','SAL10'),
-('SYK105','1','SAL10'),
-('SYK106','1','SAL10'),
-('SYK107','1','SAL10'),
-('SYK108','1','SAL10'),
-('SYK109','1','SAL10'),
-('SYK110','1','SAL10'),
-('SYK111','1','SAL10'),
-('SYK112','1','SAL10'),
-('SYK113','1','SAL10'),
-('SYK114','1','SAL10'),
-('SYK115','1','SAL10'),
-('SYK116','1','SAL10'),
-('SYK117','1','SAL10'),
-('SYK118','1','SAL10'),
-('SYK119','1','SAL10'),
-('SYK120','1','SAL10'),
-('SYK121','1','SAL10'),
-('SYK122','1','SAL10'),
-('SYK123','1','SAL10'),
-('SYK124','1','SAL10'),
-('SYK125','1','SAL10'),
-('SYK126','1','SAL10'),
-('SYK127','1','SAL10'),
-('SYK128','1','SAL10'),
-('SYK129','1','SAL10'),
-('SYK130','1','SAL10'),
-('SYK131','1','SAL10'),
-('SYK132','1','SAL10'),
-('SYK133','1','SAL10'),
-('SYK134','1','SAL10'),
-('SYK135','1','SAL10'),
-('SYK136','1','SAL10'),
-('SYK137','1','SAL10'),
-('SYK138','1','SAL10');
+
 
 
 INSERT INTO "Aktivitetstype2Sal" (SalID, AktivitetstypeID) VALUES
@@ -192,6 +150,7 @@ INSERT INTO "Gruppetime" (GruppetimeID, StartTid, SluttTid, PublisertTid, Instru
 ('G0010', '2026-03-16 17:30:00', '2026-03-16 18:15:00', '2026-03-14 17:30:00', '00089', 'L0012', 'A0001', 'SAL10'),
 ('G0011', '2026-03-16 18:30:00', '2026-03-16 19:15:00', '2026-03-14 18:30:00', '00088', 'L0012', 'A0003', 'SAL10'),
 ('G0012', '2026-03-17 18:30:00', '2026-03-17 19:30:00', '2026-03-14 19:30:00', '00087', 'L0012', 'A0004', 'SAL10');
+
 INSERT INTO "Booking" (BookingID, BrukerID, GruppetimeID, Status, OppmoteTid) VALUES
 ('BK001', 'B2001', 'G0001', 'MOTTATT', '2026-03-05 16:30:00'),
 ('BK002', 'B2002', 'G0001', 'MOTTATT', '2026-03-05 16:30:00');
@@ -203,145 +162,4 @@ INSERT INTO "Idrettslag2Bruker" (IdrettslagID, BrukerID) VALUES
 ('L0010', 'B2003');
 
 INSERT INTO "Reservasjon" (ReservasjonsID, IdrettslagID, SalID, Ukedag, Fra, Til) VALUES
-('R0001', 'L0014', 'SAL3', 'Mandag', '2026-03-02 18:00:00', '2026-03-02 20:00:00');
-
-
--------------------------------------------------------------------------------------
---Usecase 2
-INSERT INTO Booking (BookingID, BrukerID, GruppetimeID, Status, OppmoteTid)
-SELECT :bookingid, u.BrukerID, g.GruppetimeID, :status, NULL
-FROM Gruppetime AS g
-JOIN Aktivitetstype AS a 
-    ON a.AktivitetstypeID = g.AktivitetstypeID
-JOIN Bruker AS u 
-    ON u.Epost = :epost
-JOIN Sal AS sal 
-    ON sal.SalID = g.SalID
-JOIN Senter AS s 
-    ON s.SenterID = sal.SenterID
-WHERE a.Beskrivelse = :aktivitetstype 
-    AND g.StartTid = :starttid
-    AND s.Navn IN ('Oya', 'DRAGVOLL');
---------------------------------------------------------------------------------------
---Usecase 3
-UPDATE Booking
-SET OppmoteTid = CURRENT_TIMESTAMP,
-    Status = 'MOTTATT'
-WHERE BrukerID = (
-    SELECT u.BrukerID
-    FROM Bruker AS u
-    WHERE u.Epost = :epost
-)
-AND GruppetimeID = (
-    SELECT g.GruppetimeID
-    FROM Gruppetime AS g
-    JOIN Aktivitetstype AS a
-        ON a.AktivitetstypeID = g.AktivitetstypeID
-    JOIN Sal AS sal
-        ON sal.SalID = g.SalID
-    JOIN Senter AS s
-        ON s.SenterID = sal.SenterID
-    WHERE a.Beskrivelse = :aktivitetstype
-      AND g.StartTid = :starttid
-      AND s.Navn IN ('Oya', 'DRAGVOLL')
-);
-    --------------------------------------------------------------------------------------
---Usecase 4 
-SELECT DISTINCT g.StartTid, g.SluttTid, s.Navn AS Senter, sal.Navn AS Sal, a.Beskrivelse AS Aktivitet, i.Fornavn AS Instruktor
-FROM Gruppetime AS g 
-JOIN Aktivitetstype AS a 
-    ON g.AktivitetstypeID = a.AktivitetstypeID
-JOIN Sal AS sal 
-    ON sal.SalID = g.SalID
-JOIN Senter AS s 
-    ON s.SenterID = sal.SenterID
-JOIN Instruktor AS i 
-    ON i.InstruktorID = g.InstruktorID
-WHERE g.StartTid >= :startdato
-    AND g.SluttTid < datetime(:startdato, '+7 day')
-ORDER BY g.StartTid;
-
-
---------------------------------------------------------------------------------------
---Usecase 5 
-SELECT DISTINCT a.Beskrivelse AS trening, s.Navn AS treningsenter, g.StartTid AS tidspunkt
-FROM Bruker AS u
-JOIN Booking AS b 
-    ON u.BrukerID = b.BrukerID
-JOIN Gruppetime AS g 
-    ON b.GruppetimeID = g.GruppetimeID
-JOIN Aktivitetstype AS a 
-    ON g.AktivitetstypeID = a.AktivitetstypeID
-JOIN Sal AS sal 
-    ON g.SalID = sal.SalID
-JOIN Senter AS s 
-    ON sal.SenterID = s.SenterID
-WHERE b.Status = 'MOTTATT' 
-AND g.StartTid < :startdato
-AND u.Epost = :epost
-ORDER BY g.StartTid;
-
---------------------------------------------------------------------------------------
---Usecase 6 svartelisting 
-WITH Prikkstatus AS (
-    SELECT u.BrukerID, COUNT(*) AS AntallPrikker, MIN(p.Tid) AS ForstePrikk
-    FROM Bruker AS u
-    JOIN Prikk AS p 
-        ON u.BrukerID = p.BrukerID
-    WHERE u.Epost = :epost
-      AND p.Tid >= date(:referansedato, '-30 day')
-      AND p.Tid <= date(:referansedato)
-    GROUP BY u.BrukerID
-)
-UPDATE Bruker AS u
-SET UtestengtTil = (
-    SELECT date(ForstePrikk, '+30 day')
-    FROM Prikkstatus
-    WHERE Prikkstatus.BrukerID = u.BrukerID
-)
-WHERE u.BrukerID IN (
-    SELECT BrukerID
-    FROM Prikkstatus
-    WHERE AntallPrikker >= 3
-);
-
---------------------------------------------------------------------------------------
---Usecase 7 
-SELECT b.BrukerID, u.Fornavn, u.Etternavn, COUNT(*) AS antall
-FROM Booking AS b
-JOIN Bruker AS u 
-    ON u.BrukerID = b.BrukerID
-JOIN Gruppetime AS g 
-    ON g.GruppetimeID = b.GruppetimeID
-WHERE b.Status = 'MOTTATT'
-AND strftime('%m', g.StartTid) = :maaned
-GROUP BY b.BrukerID, u.Fornavn, u.Etternavn
-HAVING COUNT(*) = (
-    SELECT MAX(antallGruppetimer)
-    FROM (
-        SELECT COUNT(*) AS antallGruppetimer
-        FROM Booking AS b2
-        JOIN Gruppetime AS g2 
-            ON b2.GruppetimeID = g2.GruppetimeID
-        WHERE b2.Status = 'MOTTATT'
-        AND strftime('%m', g2.StartTid) = :maaned
-        GROUP BY b2.BrukerID
-    )
-);
-
-
---------------------------------------------------------------------------------------------
---Usecase 8
-SELECT u1.Epost, u2.Epost, COUNT(*) AS antallFelles
-FROM Booking AS b1
-JOIN Booking AS b2 
-    ON b1.GruppetimeID = b2.GruppetimeID
-   AND b1.BrukerID > b2.BrukerID
-JOIN Bruker AS u1 
-    ON b1.BrukerID = u1.BrukerID
-JOIN Bruker AS u2 
-    ON b2.BrukerID = u2.BrukerID
-WHERE b1.Status = 'MOTTATT'
-  AND b2.Status = 'MOTTATT'
-GROUP BY u1.Epost, u2.Epost
-ORDER BY antallFelles DESC;
+('R0001', 'L0014', 'SAL3', 'Mandag', '18:00:00', '20:00:00');

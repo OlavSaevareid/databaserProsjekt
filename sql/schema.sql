@@ -96,8 +96,8 @@ CREATE TABLE "Sal" (
 );
 
 CREATE TABLE "Sykkel" (
-    SykkelNr char(5) NOT NULL,
-    HarBluetooth BOOLEAN NOT NULL,
+    SykkelNr char(6) NOT NULL,
+    HarBluetooth INT NOT NULL,
     SalID char(5) NOT NULL,
     PRIMARY KEY(SykkelNr, SalID),
     FOREIGN KEY (SalID) REFERENCES "Sal"(SalID),
@@ -162,7 +162,9 @@ CREATE TABLE "Gruppetime" (
     FOREIGN KEY (IdrettslagID) REFERENCES "Idrettslag"(IdrettslagID),
     FOREIGN KEY (AktivitetstypeID) REFERENCES "Aktivitetstype"(AktivitetstypeID),
     FOREIGN KEY (SalID) REFERENCES "Sal"(SalID),
+    FOREIGN KEY (SalID, AktivitetstypeID) REFERENCES "Aktivitetstype2Sal"(SalID, AktivitetstypeID),
     CHECK (SluttTid > StartTid)
+    CHECK (PublisertTid < StartTid)
 );
 
 
@@ -204,9 +206,13 @@ CREATE TABLE "Booking" (
     FOREIGN KEY (BrukerID) REFERENCES "Bruker"(BrukerID),
     FOREIGN KEY (GruppetimeID) REFERENCES "Gruppetime"(GruppetimeID),
     UNIQUE(BrukerID, GruppetimeID),
-    CHECK (Status IN ('BOOKET', 'AVBESTILT', 'MOTTATT'))
+    CHECK (Status IN ('BOOKET', 'AVBESTILT', 'MOTTATT')),
+    CHECK (
+        (Status = 'MOTTATT' AND OppmoteTid IS NOT NULL) OR
+        (Status IN ('BOOKET', 'AVBESTILT') AND OppmoteTid IS NULL)
+    )
 );
-
+Book
 
 CREATE TABLE "Reservasjon"(
     ReservasjonsID char(5) NOT NULL,
