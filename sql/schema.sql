@@ -212,7 +212,6 @@ CREATE TABLE "Booking" (
         (Status IN ('BOOKET', 'AVBESTILT') AND OppmoteTid IS NULL)
     )
 );
-Book
 
 CREATE TABLE "Reservasjon"(
     ReservasjonsID char(5) NOT NULL,
