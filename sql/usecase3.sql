@@ -1,6 +1,6 @@
 --registrering av oppmøte 
 UPDATE Booking
-SET Oppmote = CURRENT_TIMESTAMP
+SET OppmoteTid = CURRENT_TIMESTAMP
 WHERE BrukerID = (
     SELECT u.BrukerID
     FROM Bruker AS u
