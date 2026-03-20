@@ -1,5 +1,5 @@
 INSERT INTO Booking (BookingID, BrukerID, GruppetimeID, Status, Oppmote)
-SELECT :bookingid, u.BrukerID, g.GruppetimeID, :status, NULL
+SELECT :bookingid, u.BrukerID, g.GruppetimeID, 'BOOKET', NULL
 FROM Gruppetime AS g
 JOIN Aktivitetstype AS a 
     ON a.AktivitetstypeID = g.AktivitetstypeID
