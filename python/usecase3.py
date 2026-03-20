@@ -8,17 +8,25 @@ def usecase3(epost, aktivitetstype):
 
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
+    try: 
 
-    with open(usecasePath,"r", encoding="Utf-8") as queryRaw:
-        query = queryRaw.read()
+        with open(usecasePath,"r", encoding="Utf-8") as queryRaw:
+            query = queryRaw.read()
 
-    cursor.execute(query, {
-        "epost": epost,
-        "aktivitetstype" : aktivitetstype
-    })
-    connection.commit()
-    print("query utført")
-    connection.close()
+        cursor.execute(query, {
+            "epost": epost,
+            "aktivitetstype" : aktivitetstype
+        })
+
+        rad = cursor.fetchone()
+        if not rad:
+            print("Brukeren har ikke en booking på denne treningen")
+            return
+
+        connection.commit()
+        print("oppmøte registrert")
+    finally:
+        connection.close()
 
 if __name__ == "__main__":
-    usecase3()
+    usecase3("johnny@stud.ntnu.no", "Spin60")
