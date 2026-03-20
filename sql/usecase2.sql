@@ -11,7 +11,14 @@ JOIN Senter AS s
     ON s.SenterID = sal.SenterID
 WHERE a.Beskrivelse = :aktivitetstype 
   AND g.StartTid = :starttid
-  AND s.Navn = 'Oya';
+  AND s.Navn = 'Oya'
+  
+  AND (
+    SELECT COUNT(*)
+    FROM Booking  AS b
+    WHERE b.GruppetimeID = g.GruppetimeID
+    AND b.Status = 'BOOKET'
+) < sal.Plasser;
 
 -- Lag ny booking for brukeren
 INSERT INTO Booking
