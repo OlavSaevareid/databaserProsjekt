@@ -51,5 +51,5 @@ def usecase2(epost, aktivitetstype, starttid):
 
 if __name__ == "__main__":
     usecase2("johnny@stud.ntnu.no",
-        "Spin60",
+        "Spinning60",
         "2026-03-17 18:30:00")
