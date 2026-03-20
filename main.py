@@ -10,7 +10,7 @@ from python.usecase5 import usecase5
 from python.usecase6 import usecase6
 from python.usecase7 import usecase7
 from python.usecase8 import usecase8
-from python.reset_db import reset_database
+from python.resetDB import resetDB
 
 def main():
     while True:
@@ -22,7 +22,8 @@ def main():
         print("5 - Usecase 5")
         print("6 - Usecase 6")
         print("7 - Usecase 7")
-        print("8 - Usecase 8") #potensielt legge til en 9 - reset
+        print("8 - Usecase 8") 
+        print("9 - resetter databasen")
         print("0 - Avslutt")
         
         valg = input("Skriv inn valg: ").strip()
@@ -44,7 +45,7 @@ def main():
         elif valg == "8":
             usecase8()
         elif valg == "9":
-            reset_database()
+            resetDB()
         elif valg == "0":
             print("Programmet avsluttes.")
             break
