@@ -1,7 +1,7 @@
 import sqlite3
 import os
 #registrering av oppmøte 
-def usecase3(epost, aktivitetstype):
+def usecase3(epost, aktivitetstype, starttid):
     baseDir = os.path.dirname(__file__) #Current directory-->Python
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
     usecasePath = os.path.join(baseDir, "..", "sql", "usecase3.sql")
@@ -15,12 +15,13 @@ def usecase3(epost, aktivitetstype):
 
         cursor.execute(query, {
             "epost": epost,
-            "aktivitetstype" : aktivitetstype
+            "aktivitetstype" : aktivitetstype,
+            "starttid" : starttid
         })
 
-        rad = cursor.fetchone()
-        if not rad:
-            print("Brukeren har ikke en booking på denne treningen")
+        
+        if cursor.rowcount() == 0:
+            print("Fant ingen booking å registrere oppmøte på")
             return
 
         connection.commit()
@@ -29,4 +30,4 @@ def usecase3(epost, aktivitetstype):
         connection.close()
 
 if __name__ == "__main__":
-    usecase3("johnny@stud.ntnu.no", "Spin60")
+    usecase3("johnny@stud.ntnu.no", "Spin60", "2026-03-17 18:30:00")
