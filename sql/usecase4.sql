@@ -4,7 +4,7 @@ SELECT DISTINCT g.StartTid,
                 s.Navn AS Senter,
                 sal.Navn AS Sal,
                 a.Beskrivelse AS Aktivitet,
-                i.Fornavn AS Instruktor
+                i.Fornavn || ' ' || i.Etternavn AS Instruktor
 
 FROM Gruppetime AS g 
 JOIN Aktivitetstype AS a 
@@ -17,5 +17,5 @@ JOIN Instruktor AS i
     ON i.InstruktorID = g.InstruktorID
 
 WHERE g.StartTid >= :startdato
-    AND g.StartTid < date(:startdato, '+7 day')
+    AND g.StartTid < DATETIME(:startdato, '+7 days')
 ORDER BY g.StartTid;
