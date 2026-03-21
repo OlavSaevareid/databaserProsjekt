@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-# Sjekk og oppdater svartelisting
+
 def usecase6(maaned):
     baseDir = os.path.dirname(__file__)
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
