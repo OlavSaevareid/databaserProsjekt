@@ -1,18 +1,38 @@
 import sqlite3
-from pathlib import Path
+import os
 
-#personlig besøkshistorie 
-def usecase5(aktivitetstype, senter, startdato, starttid)
-    baseDir = Path(__file__).resolve().parent
-    dbPath = baseDir.parent / "treningDB.db"
-    usecasePath = baseDir.parent / "sql" / "usecase5.sql"
-        
+#Personlig brukerhistorie
+
+def usecase5(startdato, epost):
+    baseDir = os.path.dirname(__file__) #Current directory-->Python
+    dbPath = os.path.join(baseDir, "..", "treningDB.db")
+    usecasePath = os.path.join(baseDir, "..", "sql", "usecase5.sql")
+
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
-    
+    try: 
+
         with open(usecasePath,"r", encoding="Utf-8") as queryRaw:
-        query = queryRaw.read()
+            query = queryRaw.read()
+
+        cursor.execute(query, {
+            "startdato" : startdato,
+            "epost" : epost
+        })
+
+        rader = cursor.fetchall()
         
-         cursor.execute(query, {
-        "startdato": startdato
-    })
+        if not rader:
+            print("Brukeren har ingen historikk fra denne datoen")
+            return
+        
+        print(f"Besøkshistorie for {epost} fra {startdato}")
+        for rad in rader:
+            print(rad)
+
+        connection.commit()
+    finally:
+        connection.close()
+
+if __name__ == "__main__":
+    usecase5("2026-01-01 00:00:00","johnny@stud.ntnu.no")
