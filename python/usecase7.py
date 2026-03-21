@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 
-def usecase6(maaned):
+def usecase7(maaned):
     baseDir = os.path.dirname(__file__)
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
     usecasePath = os.path.join(baseDir, "..", "sql", "usecase7.sql")
@@ -40,4 +40,4 @@ def usecase6(maaned):
 
 
 if __name__ == "__main__":
-    usecase6("03")
+    usecase7("03")
