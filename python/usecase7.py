@@ -19,17 +19,18 @@ def usecase7(maaned):
         })
 
         rader = cursor.fetchall()
+        antallTreninger = rader[0][3]
         
         if not rader:
             print("Det er ikke registrert noen treninger for noen brukere denne maaenden")
             return
         
         if len(rader) == 1:
-            print(f"Den som har trent mest denne måneden er:")
+            print(f"Den som har trent mest denne måneden er med {antallTreninger} treninger er ")
             print(f"{rader[0][1]} {rader[0][2]}")
             return
         else:
-            print(f"De som har trent mest denne måneden er:")
+            print(f"De som har trent mest denne måneden med {antallTreninger} treninger er ")
             for rad in rader:
                 fornavn, etternavn = rad[1], rad[2]
                 print(f"{fornavn} {etternavn}, ")
