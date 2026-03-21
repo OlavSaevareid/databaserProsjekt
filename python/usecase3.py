@@ -20,7 +20,7 @@ def usecase3(epost, aktivitetstype, starttid):
         })
 
         
-        if cursor.rowcount() == 0:
+        if cursor.rowcount == 0:
             print("Fant ingen booking å registrere oppmøte på")
             return
 
