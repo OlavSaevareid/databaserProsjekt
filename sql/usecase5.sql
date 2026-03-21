@@ -11,8 +11,9 @@ JOIN Sal AS sal
     ON g.SalID = sal.SalID
 JOIN Senter AS s 
     ON sal.SenterID = s.SenterID
-WHERE b.Status = 'mott' 
-AND g.StartTid > :startdato
+WHERE b.Status = 'BOOKET'
+AND b.OppmoteTid IS NOT NULL 
+AND g.StartTid >= :startdato
 AND u.Epost = :epost
 ORDER BY g.StartTid;
 
