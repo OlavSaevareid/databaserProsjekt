@@ -206,11 +206,7 @@ CREATE TABLE "Booking" (
     FOREIGN KEY (BrukerID) REFERENCES "Bruker"(BrukerID),
     FOREIGN KEY (GruppetimeID) REFERENCES "Gruppetime"(GruppetimeID),
     UNIQUE(BrukerID, GruppetimeID),
-    CHECK (Status IN ('BOOKET', 'AVBESTILT', 'MOTTATT')),
-    CHECK (
-        (Status = 'MOTTATT' AND OppmoteTid IS NOT NULL) OR
-        (Status IN ('BOOKET', 'AVBESTILT') AND OppmoteTid IS NULL)
-    )
+    CHECK (Status IN ('BOOKET', 'AVBESTILT',));
 );
 
 CREATE TABLE "Reservasjon"(
