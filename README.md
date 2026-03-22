@@ -16,25 +16,25 @@ prosjektet er satt opp og strukturert på følgende måte:
 python/
 - createDB
 - resetDB
-- usecase1.py #
-- usecase2.py #
-- usecase3.py #
-- usecase4.py #
-- usecase5.py #
-- usecase6.py #
-- usecase7.py #
-- usecase8.py #
+- usecase1.py #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
+- usecase2.py #Booke gruppetime for en bruker
+- usecase3.py #Registrere oppmøte på trening
+- usecase4.py #Ukeplan for gruppetimer
+- usecase5.py #Personlig besøkshistorie for en bruker
+- usecase6.py #Svartelisting 
+- usecase7.py #Månedens mest aktive bruker
+- usecase8.py #Finne treningspartnere
 sql/
 - schema.sql
 - data.sql
-- usecase1.sql #
-- usecase2.sql #
-- usecase3.sql #
-- usecase4.sql #
-- usecase5.sql #
-- usecase6.sql #
-- usecase7.sql #
-- usecase8.sql #
+- usecase1.sql #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
+- usecase2.sql #Booke gruppetime for en bruker
+- usecase3.sql #Registrere oppmøte på trening
+- usecase4.sql #Ukeplan for gruppetimer
+- usecase5.sql ##Personlig besøkshistorie for en bruker
+- usecase6.sql #Svartelisting 
+- usecase7.sql #Månedens mest aktive bruker
+- usecase8.sql #Finne treningspartnere
 .gitignore
 main.py
 README.md
