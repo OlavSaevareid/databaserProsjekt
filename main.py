@@ -15,14 +15,14 @@ from python.resetDB import resetDB
 def main():
     while True:
         print("\n=== TreningDB ===")
-        print("1 - Usecase 1")
-        print("2 - Usecase 2")
-        print("3 - Usecase 3")
-        print("4 - Usecase 4")
-        print("5 - Usecase 5")
-        print("6 - Usecase 6")
-        print("7 - Usecase 7")
-        print("8 - Usecase 8") 
+        print("1 - Usecase 1 (initialiserer treningsdata)")
+        print("2 - Usecase 2 (booke gruppetime for en bruker)")
+        print("3 - Usecase 3 (registrere oppmøte)")
+        print("4 - Usecase 4 (ukeplan for gruppetimer)")
+        print("5 - Usecase 5 (personlig besøkshistorie)")
+        print("6 - Usecase 6 (svartelisting)")
+        print("7 - Usecase 7 (månedens mest aktive bruker)")
+        print("8 - Usecase 8 (finne treningspartnere)") 
         print("9 - resetter databasen")
         print("0 - Avslutt")
         

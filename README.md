@@ -4,7 +4,7 @@ Dette er et databaseprosjekt som håndterer treningsbookinger inspirert av SIT s
 
 Det er delt opp i 2 hoveddeler: 
 - 'sql/' - som inneholder databaseskjema, testdata og SQL-spørringer. Databasen er implementert i SQLite 3
--'python/' - som inneholder Python-kode (versjon 3) som oppretter databasen og kjører usecasene. 
+- 'python/' - som inneholder Python-kode (versjon 3) som oppretter databasen og kjører usecasene. 
 
 ## beskrivelse
 -beskrivelse: systemet administrerer: brukere, gruppetimer og bookinger ..., forskjellige brukstilfeller som vi kan teste individuelt. 
@@ -18,7 +18,7 @@ python/
 - resetDB
 - usecase1.py #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
 - usecase2.py #Booke gruppetime for en bruker
-- usecase3.py #Registrere oppmøte på trening
+- usecase3.py #Registrere oppmøte
 - usecase4.py #Ukeplan for gruppetimer
 - usecase5.py #Personlig besøkshistorie for en bruker
 - usecase6.py #Svartelisting 
@@ -29,7 +29,7 @@ sql/
 - data.sql
 - usecase1.sql #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
 - usecase2.sql #Booke gruppetime for en bruker
-- usecase3.sql #Registrere oppmøte på trening
+- usecase3.sql #Registrere oppmøte
 - usecase4.sql #Ukeplan for gruppetimer
 - usecase5.sql ##Personlig besøkshistorie for en bruker
 - usecase6.sql #Svartelisting 
