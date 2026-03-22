@@ -14,5 +14,5 @@ Thumbs.db
 .vscode/
 
 
-#DB browser /////
-.sqbpro
+#DB browser for SQLite
+*.sqbpro

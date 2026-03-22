@@ -1,22 +1,26 @@
 # Database prosjektoppgave
-## TreningDB - hva prosjektet er 
-Dette er et databaseprosjekt som håndterer treningsbookinger inspirert av SIT sine treningssystemer. Strukturen og databasen er basert på modellene og skjemaet som ble utviklet i del 1. Prosjektet implementerer et databasesystem for å administrere brukere, bookinger og gruppe timer.
+## TreningDB
+Dette prosjektet implementerer en treningsdatabase inspirert av SiT sine treningssystemer. Databasestrukturen er basert på ER-modellen og relasjonsskjemaet utviklet i del 1 av prosjektet. 
 
-Det er delt opp i 2 hoveddeler: 
-- 'sql/' - som inneholder databaseskjema, testdata og SQL-spørringer. Databasen er implementert i SQLite 3
-- 'python/' - som inneholder Python-kode (versjon 3) som oppretter databasen og kjører usecasene. 
+Databasen håndterer blant annet:
+- brukere
+- bookinger 
+- gruppetimer
+- treningssentre
 
-## beskrivelse
--beskrivelse: systemet administrerer: brukere, gruppetimer og bookinger ..., forskjellige brukstilfeller som vi kan teste individuelt. 
-Basert på skjemaet utviklet i del 1 
-- oppretting av databasesystemet, fylles med data, kjøre SQL spørringer 
+Prosjektet er delt opp i to hoveddeler: 
+- `sql/` - inneholder databaseskjema, testdata og SQL-spørringer. Databasen er implementert i SQLite 3
+- `python/` - inneholder Python-kode (Python 3) som oppretter databasen og kjører usecasene. 
 
-## struktur
-prosjektet er satt opp og strukturert på følgende måte:
+Databasen opprettes fra bunnen gjennom Python-skriptet som oppretter tabellene fra `schema.sql` og fyller databasen med data fra `data.sql`. 
+
+---
+## Struktur
+Prosjektet er satt opp og strukturert på følgende måte:
 python/
-- createDB
-- resetDB
-- usecase1.py #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
+- createDB.py
+- resetDB.py
+- usecase1.py #Initialiser treningsdata (opprette treningssentre, saler, brukere, trenere og treninger)
 - usecase2.py #Booke gruppetime for en bruker
 - usecase3.py #Registrere oppmøte
 - usecase4.py #Ukeplan for gruppetimer
@@ -27,7 +31,7 @@ python/
 sql/
 - schema.sql
 - data.sql
-- usecase1.sql #Initialiser treningsdata (opprette treningssentere, saler, brukere, trenere og treninger)
+- usecase1.sql #Initialiser treningsdata (opprette treningssentre, saler, brukere, trenere og treninger)
 - usecase2.sql #Booke gruppetime for en bruker
 - usecase3.sql #Registrere oppmøte
 - usecase4.sql #Ukeplan for gruppetimer
@@ -40,21 +44,43 @@ main.py
 README.md
 TreningDB.sqbpro
 
+---
+## Hvilke filer som gjør hva 
+`python/createDB.py`
+Oppretter SQLite-databasen 'treningDB'. Skriptet leser og kjører `schema.sql` for å opprette tabeller, og `data.sql` for å fylle databasen med data. 
 
-## hvilke filer som gjør hva 
-python python/createDB.py --> oppretter SQLite-databasen 'treningDB' og tabeller og fyller inn med data (oppretter SQL databasen treningDB.db, leser og kjører schema.sql + data.sql)
-main.py --> hovedprogrammet hvor bruker kan velge hvilket usecase som skal kjøres 
-usecasene --> implementert i 'python/usecaseX.py' og bruker SQL-spørringene fra ‘sql/usecaseX.sql‘
+`main.py`
+Hovedprogrammet hvor bruker kan velge hvilket usecase som skal kjøres 
 
-## kjøring av programmet 
-oppretting av programmet først: python python/createDB.py
-python main.py --> hovedmeny med 1-8 usecases eller 0 avslutt, 9 reset
-reset --> nullstiller databasen (sletter eksisterende databasefil, oppretter ny database og fyller den inn med testdata) Dette gjør at man kan sette databasen til en starttilstand som er kjent (utgangspunkt)
+usecasene
+Er implementert i `python/usecaseX.py` og bruker SQL-spørringene fra `sql/usecaseX.sql`
 
-## merknader
-generet database er ignorert siden den opprettes lokalt med createDB.py 
-.sqbpro er ignorert siden det ikke er nødvendig for kjøring av prosjektet --Y prosjektfil fra eksternt verktøy
+`python/resetDB.py`
+Brukes for å nullstille databasen ved at den sletter eksisterende database, oppretter den på nytt, og fyller den med testdata.
 
+---
+## Oppretting og kjøring av programmet 
+Før man kan kjøre programmet så må databasen opprettes. Dette gjøres ved å navigere seg til prosjektmappen og kjør: 
+```
+python python/createDB.py
+```
+
+Deretter starter man programmet med: 
+```
+python main.py 
+```
+Programmet viser hovedmenyen hvor man kan velge:
+- `1-8` for å kjøre ulike usecases 
+- `9` for å resette databasen
+- `0` for å avslutte programmet 
+
+Reset av databasen: 
+Ved å velge `9` i hovedmenyen så nullstilles databasen. Dette gjør at man kan sette databasen til en kjent starttilstand under testing.
+
+Kjøre usecase direkte: 
+Man kan også kjøre usecasene direkte hvis ønsket. Dette gjøres ved å kjøre de tilhørende Python-filene `python/usecaseX.py`. Hvor X byttes ut med tallet til brukstilfellet. 
+
+---
 ## gruppemedlemmer 
 Olav Onstad Sævareid
 Markus Mikalsen 
