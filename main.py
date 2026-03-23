@@ -13,6 +13,11 @@ from python.usecase7 import usecase7
 from python.usecase8 import usecase8
 from python.resetDB import resetDB
 
+def db_exists():
+    baseDir = os.path.dirname(__file__)
+    dbPath = os.path.join(baseDir, "treningDB.db")
+    return os.path.exists(dbPath)
+
 def main():
     while True:
         print("\n=== TreningDB ===")
@@ -33,6 +38,10 @@ def main():
             createDB()
         elif valg == "1":
             usecase1()
+        elif valg == "10":  
+            print("Programmet avsluttes.")
+            break
+
         elif valg == "2":
             usecase2("johnny@stud.ntnu.no","Spin60","2026-03-17 18:30:00")
         elif valg == "3":
@@ -49,9 +58,6 @@ def main():
             usecase8()
         elif valg == "9":
             resetDB()
-        elif valg == "10":  
-            print("Programmet avsluttes.")
-            break
         else:
             print("Ugyldig valg. Skriv et tall fra 0 til 10.")
 

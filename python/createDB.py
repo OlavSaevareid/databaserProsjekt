@@ -18,12 +18,6 @@ def createDB():
 
     print("Oppretter skjema")
 
-    with open(dataPath, "r", encoding = "utf-8") as dataRaw:
-        data = dataRaw.read()
-        cursor.executescript(data)
-
-    print("Fyller inn data")
-
     connection.commit()
     connection.close()
 
