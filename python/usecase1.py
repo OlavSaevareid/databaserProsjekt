@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 def usecase1():
-    baseDir = os.path.dirname(__file__) #Current directory-->Python
+    baseDir = os.path.dirname(__file__)
     dbPath = os.path.join(baseDir, "..", "treningDB.db")
     dataPath = os.path.join(baseDir, "..", "sql", "usecase1.sql")
 
@@ -13,16 +13,28 @@ def usecase1():
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
 
-    with open(dataPath, "r", encoding = "utf-8") as dataRaw:
-        data = dataRaw.read()
-        cursor.executescript(data)
+    # Sjekk om skjema finnes
+    cursor.execute("""
+        SELECT name 
+        FROM sqlite_master 
+        WHERE type='table' AND name='Bruker'
+    """)
 
-    print("Fyller inn data")
+    if not cursor.fetchone():
+        print("Schema mangler. Kjør createDB først.")
+        connection.close()
+        return
 
-    connection.commit()
-    connection.close()
+    try:
+        with open(dataPath, "r", encoding="utf-8") as dataRaw:
+            data = dataRaw.read()
+            cursor.executescript(data)
 
-    print("Databasen er fyllt inn med testdata")
+        connection.commit()
+        print("Databasen er fylt inn med testdata")
+
+    finally:
+        connection.close()
 
 
 if __name__ == "__main__":
