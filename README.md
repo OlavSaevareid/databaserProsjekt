@@ -94,7 +94,7 @@ Kjøre usecase direkte:
 Man kan også kjøre usecasene direkte hvis ønsket. Dette gjøres ved å kjøre de tilhørende Python-filene `python/usecaseX.py`. Hvor X byttes ut med tallet til brukstilfellet. 
 
 ---
-## gruppemedlemmer 
+## gruppemedlemmer gruppe 153
 Olav Onstad Sævareid
 Markus Mikalsen 
 Caroline Willoch 
