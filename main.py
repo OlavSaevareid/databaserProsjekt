@@ -16,7 +16,7 @@ from python.resetDB import resetDB
 def main():
     while True:
         print("\n=== TreningDB ===")
-        print("0 - Lage Database (Lager en tom database fil) ")
+        print("0 - Opprett database (Lager en tom database fil) ")
         print("1 - Usecase 1 (initialiserer treningsdata)")
         print("2 - Usecase 2 (booke gruppetime for en bruker)")
         print("3 - Usecase 3 (registrere oppmøte)")
