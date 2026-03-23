@@ -92,4 +92,6 @@ Olav Onstad Sævareid
 Markus Mikalsen 
 Caroline Willoch 
  
-
+skal legge til: 
+usecasene kjo7rer med forha7ndsdefinerte parametere fra oppgaveteksten --> fungerer som en testmeny/demomeny for prosjektet 
+usecase 1 er ren sql 
