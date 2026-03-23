@@ -95,3 +95,7 @@ Caroline Willoch
 skal legge til: 
 usecasene kjo7rer med forha7ndsdefinerte parametere fra oppgaveteksten --> fungerer som en testmeny/demomeny for prosjektet 
 usecase 1 er ren sql 
+Endret rollene til initfunksjonene: CreateDb lager bare skjema, usecase1.py fyller inn med testdata.
+Endret usecase1.py til å bare sette inn data og lagt til sikkerhetsjekk på om skjema finnes før man setter inn data
+ResetDB fjerner nå all data. CreateDB lager bare skjema
+Lag til sjekker for å gjøre main idiotsikker
