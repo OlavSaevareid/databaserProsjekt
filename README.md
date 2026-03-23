@@ -18,6 +18,7 @@ opprettes databaseskjemaet fra `schema.sql`, derretter så fylles databasen med 
 ---
 ## Struktur
 Prosjektet er satt opp og strukturert på følgende måte:
+
 python/
 - createDB.py
 - resetDB.py
@@ -29,6 +30,7 @@ python/
 - usecase6.py #Svartelisting 
 - usecase7.py #Månedens mest aktive bruker
 - usecase8.py #Finne treningspartnere
+
 sql/
 - schema.sql
 - data.sql
@@ -39,6 +41,7 @@ sql/
 - usecase6.sql 
 - usecase7.sql 
 - usecase8.sql 
+
 .gitignore
 main.py
 README.md
