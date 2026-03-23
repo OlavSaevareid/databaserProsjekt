@@ -31,17 +31,17 @@ def main():
         if valg == "1":
             usecase1()
         elif valg == "2":
-            usecase2()
+            usecase2("johnny@stud.ntnu.no","Spin60","2026-03-17 18:30:00")
         elif valg == "3":
-            usecase3()
+            usecase3("johnny@stud.ntnu.no", "Spin60", "2026-03-17 18:30:00")
         elif valg == "4":
-            usecase4()
+            usecase4("2026-03-16", 12)
         elif valg == "5":
-            usecase5()
+            usecase5("2026-01-01 00:00:00","johnny@stud.ntnu.no")
         elif valg == "6":
-            usecase6()
+            usecase6("johnny@stud.ntnu.no", "2026-03-18 12:00:00")
         elif valg == "7":
-            usecase7()
+            usecase7("03")
         elif valg == "8":
             usecase8()
         elif valg == "9":
