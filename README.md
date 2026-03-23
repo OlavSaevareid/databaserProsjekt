@@ -68,12 +68,12 @@ cd databaserProsjekt
 
 så kjør: 
 ```
-python python/createDB.py
+python3 python/createDB.py
 ```
 
 Deretter starter man programmet med: 
 ```
-python main.py 
+python3 main.py 
 ```
 Programmet viser hovedmenyen hvor man kan velge:
 - `1-8` for å kjøre ulike usecases 
