@@ -2,6 +2,7 @@ import sqlite3
 import os
 import uuid
 from sqlite3 import IntegrityError
+from datetime import datetime
 
 #booking av trening 
 def usecase2(epost, aktivitetstype, starttid):
@@ -12,6 +13,31 @@ def usecase2(epost, aktivitetstype, starttid):
     connection = sqlite3.connect(dbPath)
     cursor = connection.cursor()
     try:
+        #Sjekker først om bruker er svartelista
+        cursor.execute("""
+            SELECT u.UtestengtTil
+            FROM Bruker AS u
+            WHERE u.Epost = :epost
+        """, {
+            "epost": epost
+        })
+
+        resultat = cursor.fetchone()
+
+        if resultat is None:
+            print("Fant ikke bruker")
+            return
+        
+        UtestengtTil = resultat[0]
+        if UtestengtTil is None:
+            pass
+
+        else:
+            UtestengtTil = datetime.strptime(UtestengtTil, "%Y-%m-%d %H:%M:%S")
+
+            if datetime.now() < UtestengtTil:
+                print(f"{epost} er utestengt til {UtestengtTil} og kan ikke booke denne timen")
+                return
         with open(usecasePath,"r", encoding="Utf-8") as queryRaw:
             sqlCommands = queryRaw.read().split(";")
             check_sql = sqlCommands[0].strip()
