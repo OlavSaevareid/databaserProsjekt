@@ -21,7 +21,7 @@ def usecase1():
     """)
 
     if not cursor.fetchone():
-        print("Schema mangler. Kjør createDB først.")
+        print("Skjema mangler. Kjør createDB først.")
         connection.close()
         return
 
