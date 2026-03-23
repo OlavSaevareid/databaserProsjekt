@@ -2,6 +2,7 @@ import sqlite3
 import os
 from pathlib import Path
 
+from python.createDB import createDB
 from python.usecase1 import usecase1
 from python.usecase2 import usecase2
 from python.usecase3 import usecase3
@@ -15,6 +16,7 @@ from python.resetDB import resetDB
 def main():
     while True:
         print("\n=== TreningDB ===")
+        print("0 - Lage Database (Lager en tom database fil) ")
         print("1 - Usecase 1 (initialiserer treningsdata)")
         print("2 - Usecase 2 (booke gruppetime for en bruker)")
         print("3 - Usecase 3 (registrere oppmøte)")
@@ -27,8 +29,9 @@ def main():
         print("0 - Avslutt")
         
         valg = input("Skriv inn valg: ").strip()
-
-        if valg == "1":
+        if valg == "0":
+            createDB()
+        elif valg == "1":
             usecase1()
         elif valg == "2":
             usecase2("johnny@stud.ntnu.no","Spin60","2026-03-17 18:30:00")
@@ -46,11 +49,11 @@ def main():
             usecase8()
         elif valg == "9":
             resetDB()
-        elif valg == "0":
+        elif valg == "10":  
             print("Programmet avsluttes.")
             break
         else:
-            print("Ugyldig valg. Skriv et tall fra 0 til 9.")
+            print("Ugyldig valg. Skriv et tall fra 0 til 10.")
 
 if __name__ == "__main__":
     main()
