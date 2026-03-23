@@ -17,7 +17,7 @@ opprettes databaseskjemaet fra `schema.sql`, deretter så fylles databasen med t
 
 I tråd med kravene i oppgaven er databasefilen `treningDB.db` tom ved levering, slik at sensor kan kjøre initialiseringsprogrammene. 
 
----s
+---
 ## Struktur
 Prosjektet er satt opp og strukturert på følgende måte:
 
