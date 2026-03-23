@@ -42,7 +42,6 @@ sql/
 .gitignore
 main.py
 README.md
-TreningDB.sqbpro
 
 ---
 ## Hvilke filer som gjør hva 
