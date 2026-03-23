@@ -12,7 +12,7 @@ Prosjektet er delt opp i to hoveddeler:
 - `sql/` - inneholder databaseskjema, testdata og SQL-spørringer. Databasen er implementert i SQLite 3
 - `python/` - inneholder Python-kode (Python 3) som oppretter databasen og kjører usecasene. 
 
-Databasen opprettes fra bunnen gjennom Python-skriptet som oppretter tabellene fra `schema.sql` og fyller databasen med data fra `data.sql`. 
+Databasen opprettes fra bunnen gjennom Python-skriptet som oppretter tabellene fra `schema.sql` og fyller databasen med data fra `usecase1.sql`. 
 
 ---
 ## Struktur
@@ -92,3 +92,4 @@ Olav Onstad Sævareid
 Markus Mikalsen 
 Caroline Willoch 
  
+
