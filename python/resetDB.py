@@ -16,5 +16,5 @@ def resetDB():
     createDB()
     print("\n ny database er opprettet")
 
-    if __name__ == "__main__":
-        resetDB()
+if __name__ == "__main__":
+    resetDB()
