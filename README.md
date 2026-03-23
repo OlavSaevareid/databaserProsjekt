@@ -13,16 +13,18 @@ Prosjektet er delt opp i to hoveddeler:
 - `python/` - inneholder Python-kode (Python 3) som oppretter databasen og kjører usecasene. 
 
 Databasen initialiseres i to steg gjennom `main.py`, som fungerer som testmeny for prosjektet. Først så
-opprettes databaseskjemaet fra `schema.sql`, derretter så fylles databasen med testdata fra `usecase1.sql`. 
+opprettes databaseskjemaet fra `schema.sql`, deretter så fylles databasen med testdata fra `usecase1.sql`.
 
----
+I tråd med kravene i oppgaven er databasefilen `treningDB.db` tom ved levering, slik at sensor kan kjøre initialiseringsprogrammene. 
+
+---s
 ## Struktur
 Prosjektet er satt opp og strukturert på følgende måte:
 
 python/
 - createDB.py
 - resetDB.py
-- usecase1.py #Initialiser treningsdatae
+- usecase1.py #Initialiser treningsdataen
 - usecase2.py #Booke gruppetime for en bruker
 - usecase3.py #Registrere oppmøte
 - usecase4.py #Ukeplan for gruppetimer
@@ -66,7 +68,6 @@ Usecasene kjører med forhåndsdefinerte parametere fra prosjektoppgaven,så den
 usecasene
 Er implementert i `python/usecaseX.py` og bruker SQL-spørringene fra `sql/usecaseX.sql`
 
-
 ---
 ## Oppretting og kjøring av programmet 
 Programmet kjøres gjennom `main.py`.
@@ -81,7 +82,8 @@ python3 main.py
 ```
 Programmet viser hovedmenyen hvor man kan velge:
 - `0` for å opprette databaseskjemaet
-- `1-8` for å kjøre ulike usecases 
+- `1` for å fylle databasen med testdata
+- `2-8` for å kjøre ulike usecases 
 - `9` for å nullstille databasen
 - `10` for å avslutte programmet 
 
@@ -92,9 +94,6 @@ Før man kan teste usecasene så må man initialisere databasen.
 
 Reset av databasen: 
 Ved å velge `9` i hovedmenyen så nullstilles databasen. Dette gjør at man kan sette databasen til en kjent starttilstand under testing.
-
-Kjøre usecase direkte: 
-Man kan også kjøre usecasene direkte hvis ønsket. Dette gjøres ved å kjøre de tilhørende Python-filene `python/usecaseX.py`. Hvor X byttes ut med tallet til brukstilfellet. 
 
 ---
 ## gruppemedlemmer gruppe 153
