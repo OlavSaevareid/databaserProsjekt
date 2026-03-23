@@ -33,7 +33,6 @@ python/
 
 sql/
 - schema.sql
-- data.sql
 - usecase1.sql 
 - usecase3.sql 
 - usecase4.sql 
