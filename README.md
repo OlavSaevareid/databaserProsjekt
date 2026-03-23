@@ -22,6 +22,7 @@ I tråd med kravene i oppgaven er databasefilen `treningDB.db` tom ved levering,
 Prosjektet er satt opp og strukturert på følgende måte:
 
 python/
+- __init.py__
 - createDB.py
 - resetDB.py
 - usecase1.py #Initialiser treningsdataen
