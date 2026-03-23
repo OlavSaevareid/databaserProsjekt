@@ -26,7 +26,7 @@ def main():
         print("7 - Usecase 7 (månedens mest aktive bruker)")
         print("8 - Usecase 8 (finne treningspartnere)") 
         print("9 - resetter databasen")
-        print("0 - Avslutt")
+        print("10 - Avslutt")
         
         valg = input("Skriv inn valg: ").strip()
         if valg == "0":
