@@ -9,7 +9,7 @@ Databasen håndterer blant annet:
 - treningssentre
 
 Prosjektet er delt opp i to hoveddeler: 
-- `sql/` - inneholder databaseskjema og SQL-spørringer. Databasen er implementert i SQLite 3
+- `sql/` - inneholder databaseskjema og SQL-spørringer. Databasen er implementert i SQLite 3.
 - `python/` - inneholder Python-kode (Python 3) som oppretter databasen og kjører usecasene. 
 
 Databasen initialiseres i to steg gjennom `main.py`, som fungerer som testmeny for prosjektet. Først så
@@ -65,8 +65,8 @@ Hovedprogrammet hvor bruker kan velge hvilket usecase som skal kjøres.
 Usecasene kjører med forhåndsdefinerte parametere fra prosjektoppgaven,så den fungerer som en testmeny for prosjektet. 
 
 
-usecasene
-Er implementert i `python/usecaseX.py` og bruker SQL-spørringene fra `sql/usecaseX.sql`
+Usecasene
+er implementert i `python/usecaseX.py` og bruker SQL-spørringene fra `sql/usecaseX.sql`.
 
 ---
 ## Oppretting og kjøring av programmet 
@@ -76,7 +76,7 @@ Dette gjøres ved å navigere seg til prosjektmappen:
 cd databaserProsjekt
 ```
 
-så starte programmet med  
+så starte programmet med:  
 ```
 python3 main.py 
 ```
@@ -88,11 +88,13 @@ Programmet viser hovedmenyen hvor man kan velge:
 - `10` for å avslutte programmet 
 
 Viktig rekkefølge ved oppstart:
+
 Før man kan teste usecasene så må man initialisere databasen.
 1. kjør 0 for å opprette databaseskjemaet. 
 2. kjør 1 for å fylle databasen med testdata 
 
 Reset av databasen: 
+
 Ved å velge `9` i hovedmenyen så nullstilles databasen. Dette gjør at man kan sette databasen til en kjent starttilstand under testing.
 
 ---
