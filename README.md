@@ -60,7 +60,13 @@ Brukes for å nullstille databasen ved at den sletter eksisterende database, opp
 
 ---
 ## Oppretting og kjøring av programmet 
-Før man kan kjøre programmet så må databasen opprettes. Dette gjøres ved å navigere seg til prosjektmappen og kjør: 
+Før man kan kjøre programmet så må databasen opprettes. 
+Dette gjøres ved å navigere seg til prosjektmappen: 
+```
+cd databaserProsjekt
+```
+
+så kjør: 
 ```
 python python/createDB.py
 ```
