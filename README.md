@@ -22,7 +22,7 @@ Prosjektet er satt opp og strukturert på følgende måte:
 python/
 - createDB.py
 - resetDB.py
-- usecase1.py #Initialiser treningsdata
+- usecase1.py #Initialiser treningsdatae
 - usecase2.py #Booke gruppetime for en bruker
 - usecase3.py #Registrere oppmøte
 - usecase4.py #Ukeplan for gruppetimer
@@ -100,6 +100,8 @@ Man kan også kjøre usecasene direkte hvis ønsket. Dette gjøres ved å kjøre
 ---
 ## gruppemedlemmer gruppe 153
 Olav Onstad Sævareid
+
 Markus Mikalsen 
+
 Caroline Willoch 
  
