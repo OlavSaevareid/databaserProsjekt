@@ -9,10 +9,11 @@ Databasen håndterer blant annet:
 - treningssentre
 
 Prosjektet er delt opp i to hoveddeler: 
-- `sql/` - inneholder databaseskjema, testdata og SQL-spørringer. Databasen er implementert i SQLite 3
+- `sql/` - inneholder databaseskjema og SQL-spørringer. Databasen er implementert i SQLite 3
 - `python/` - inneholder Python-kode (Python 3) som oppretter databasen og kjører usecasene. 
 
-Databasen opprettes fra bunnen gjennom Python-skriptet som oppretter tabellene fra `schema.sql` og fyller databasen med data fra `usecase1.sql`. 
+Databasen initialiseres i to steg gjennom `main.py`, som fungerer som testmeny for prosjektet. Først så
+opprettes databaseskjemaet fra `schema.sql`, derretter så fylles databasen med testdata fra `usecase1.sql`. 
 
 ---
 ## Struktur
@@ -20,7 +21,7 @@ Prosjektet er satt opp og strukturert på følgende måte:
 python/
 - createDB.py
 - resetDB.py
-- usecase1.py #Initialiser treningsdata (opprette treningssentre, saler, brukere, trenere og treninger)
+- usecase1.py #Initialiser treningsdata
 - usecase2.py #Booke gruppetime for en bruker
 - usecase3.py #Registrere oppmøte
 - usecase4.py #Ukeplan for gruppetimer
@@ -31,14 +32,13 @@ python/
 sql/
 - schema.sql
 - data.sql
-- usecase1.sql #Initialiser treningsdata (opprette treningssentre, saler, brukere, trenere og treninger)
-- usecase2.sql #Booke gruppetime for en bruker
-- usecase3.sql #Registrere oppmøte
-- usecase4.sql #Ukeplan for gruppetimer
-- usecase5.sql ##Personlig besøkshistorie for en bruker
-- usecase6.sql #Svartelisting 
-- usecase7.sql #Månedens mest aktive bruker
-- usecase8.sql #Finne treningspartnere
+- usecase1.sql 
+- usecase3.sql 
+- usecase4.sql 
+- usecase5.sql 
+- usecase6.sql 
+- usecase7.sql 
+- usecase8.sql 
 .gitignore
 main.py
 README.md
@@ -47,38 +47,45 @@ TreningDB.sqbpro
 ---
 ## Hvilke filer som gjør hva 
 `python/createDB.py`
-Oppretter SQLite-databasen 'treningDB'. Skriptet leser og kjører `schema.sql` for å opprette tabeller, og `data.sql` for å fylle databasen med data. 
+Oppretter SQLite-databasen 'treningDB' og lager databaseskjemaet ved å kjøre `schema.sql`. Den fyller ikke databasen med data. 
+
+`python/usecase1.py`
+Initaliserer databasen med testdata ved å kjøre SQL-spørringene i `sql/usecase1.sql`. Scriptet inneholder også en sikkerhetssjekk om databaseskjemaet eksisterer. 
+
+`python/resetDB.py`
+Brukes for å nullstille databasen ved at den sletter all data fra tabellene, uten at den sletter selve skjemaet. 
 
 `main.py`
-Hovedprogrammet hvor bruker kan velge hvilket usecase som skal kjøres 
+Hovedprogrammet hvor bruker kan velge hvilket usecase som skal kjøres. 
+Usecasene kjører med forhåndsdefinerte parametere fra prosjektoppgaven,så den fungerer som en testmeny for prosjektet. 
+
 
 usecasene
 Er implementert i `python/usecaseX.py` og bruker SQL-spørringene fra `sql/usecaseX.sql`
 
-`python/resetDB.py`
-Brukes for å nullstille databasen ved at den sletter eksisterende database, oppretter den på nytt, og fyller den med testdata.
 
 ---
 ## Oppretting og kjøring av programmet 
-Før man kan kjøre programmet så må databasen opprettes. 
+Programmet kjøres gjennom `main.py`.
 Dette gjøres ved å navigere seg til prosjektmappen: 
 ```
 cd databaserProsjekt
 ```
 
-så kjør: 
-```
-python3 python/createDB.py
-```
-
-Deretter starter man programmet med: 
+så starte programmet med  
 ```
 python3 main.py 
 ```
 Programmet viser hovedmenyen hvor man kan velge:
+- `0` for å opprette databaseskjemaet
 - `1-8` for å kjøre ulike usecases 
-- `9` for å resette databasen
-- `0` for å avslutte programmet 
+- `9` for å nullstille databasen
+- `10` for å avslutte programmet 
+
+Viktig rekkefølge ved oppstart:
+Før man kan teste usecasene så må man initialisere databasen.
+1. kjør 0 for å opprette databaseskjemaet. 
+2. kjør 1 for å fylle databasen med testdata 
 
 Reset av databasen: 
 Ved å velge `9` i hovedmenyen så nullstilles databasen. Dette gjør at man kan sette databasen til en kjent starttilstand under testing.
@@ -92,10 +99,3 @@ Olav Onstad Sævareid
 Markus Mikalsen 
 Caroline Willoch 
  
-skal legge til: 
-usecasene kjo7rer med forha7ndsdefinerte parametere fra oppgaveteksten --> fungerer som en testmeny/demomeny for prosjektet 
-usecase 1 er ren sql 
-Endret rollene til initfunksjonene: CreateDb lager bare skjema, usecase1.py fyller inn med testdata.
-Endret usecase1.py til å bare sette inn data og lagt til sikkerhetsjekk på om skjema finnes før man setter inn data
-ResetDB fjerner nå all data. CreateDB lager bare skjema
-Lag til sjekker for å gjøre main idiotsikker
