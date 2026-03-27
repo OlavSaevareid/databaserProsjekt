@@ -11,6 +11,7 @@ from python.usecase6 import usecase6
 from python.usecase7 import usecase7
 from python.usecase8 import usecase8
 from python.resetDB import resetDB
+from python.giPrikk import giPrikk
 
 
 def get_db_path():
@@ -109,6 +110,7 @@ def print_menu():
     print("8 - Usecase 8 (finne treningspartnere)")
     print("9 - Nullstill databasen (sletter all data)")
     print("10 - Avslutt")
+    print("100 - Gi tre prikker til Johnny")
 
 
 def main():
@@ -167,6 +169,11 @@ def main():
         elif valg == "10":
             print("Programmet avsluttes.")
             break
+
+        elif valg == "100":
+            if not require_schema():
+                continue
+            giPrikk() 
 
         else:
             print("Ugyldig valg. Skriv et tall fra 0 til 10.")
